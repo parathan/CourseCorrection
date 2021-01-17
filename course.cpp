@@ -3,7 +3,8 @@
 Course::Course(const std::string courseCode, const std::string name, const std::vector<std::string> &prerequisites)
     : courseCode{ courseCode },
       name{ name },
-      prerequisites{ prerequisites }
+      prerequisites{ prerequisites },
+      prereqCount{ prerequisites.size() }
 {}
 
 const std::string & Course::getCode() const {
@@ -20,6 +21,7 @@ const std::vector<std::string> & Course::getPrereqs() const {
 
 void addPrereq(const std::string prereq) {
     prerequisites.push_back(prereq);
+    prereqCount++;
 }
 
 void Course::print(std::ostream &out) const {
