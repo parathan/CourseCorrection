@@ -10,6 +10,7 @@ class LinkedList {
         std::list<Course> dependents; //linked-list of courses that are dependend on this one
         int inNumber; //Number of prerequisites for this course
         LinkedList(Course &course);
+        void addListNode(Course &course);
 }
 
 

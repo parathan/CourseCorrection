@@ -12,6 +12,7 @@ void Graph::init() {
         int prereqLength = graph[i].getPrereqs().size();
         for (int j = 0; j < prereqLength; j++) {
             std::string prereq = graph[i].course.getPrereqs()[j];
+            graph[courseReference[prereq]].addListNode(graph[i].course);
         }
     }
 }
